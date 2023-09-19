@@ -17,9 +17,16 @@ char_count = 0;
 
 while (*format)
 {
-	if (*format == '%')
+	if (*format != '%')
 	{
-		format++; 
+		_putchar(*format);
+		char_count++; 
+	}
+	else if (*format == '%')
+	{
+		format++;
+		if (* format == '\0')
+			break;
 		if (*format == 'c')
 			char_count += print_character(va_arg(args, int));
 		else if (*format == 's')
