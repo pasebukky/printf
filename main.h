@@ -9,13 +9,25 @@
 #include <unistd.h>
 
 
-
-
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_character (va_list args, int output);
-int print_string (va_list args, int output);
-int print_ampersand (int output);
+int print_character(char c);
+int print_string(const char *string);
+int print_percent();
+int print_integer(int n);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #endif 

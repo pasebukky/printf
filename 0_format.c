@@ -1,65 +1,46 @@
 #include "main.h"
 
 /**
- * _printf - Custom printf function that handles the 'c', 's', and '%' conversion specifiers
- * @format: Character string
+ * print_character - Prints a character 
+ * @c: Character to be prined
  *
- * Return: number of characters printed excluding the null bytes used to end the output to string
+ * Return: Always 1 (the number of characters printed)
  */
- 
-int _printf(const char *format, ...)
-{
-    va_list args; /* holds variable arguments */
-    int output, length, i; /*variables to count the characters printed, store string length and loop through string respectivelt */
-    const char *string; /* pointer to the string */
-    
-    va_start(args, format);
-    output = 0;
-    length = 0;
 
-    while (*format)
-    {
-        if (*format != '%') /* check if the character is not ampersand */
-        {
-            putchar(*format);
-            output++; /* print the character in increments*/
-        }
-        else
-        {
-            format++; /* Increment and move to the character after ampersand */
-            if (*format == '\0') /* if it is a null character, break */
-                break;
-            if (*format == 'c') /* if it is a single character i.e. 'c' print to stdout and increment count */
-            {
-                char c = va_arg(args, int);
-                putchar(c);
-                output++;
-            }
-            else if (*format == 's') /* if it is a string i.e. 's', calculate the string length and print the string to stdout via looping and increment count */
-            {
-                string = va_arg(args, const char *);
-                length = strlen(string);
-                for (i = 0; i < length; i++)
-                {
-                    putchar(string[i]);
-                    output++;
-                }
-            }
-            else if (*format == '%') /* if it is ampersand i.e. '%' print a literal ampersand to stdout and increment count */
-            {
-                putchar('%');
-                output++;
-            }
-            else /* if the specifier is unknown print ampersand and the unknown specifier */
-            {
-                putchar('%');
-                output++;
-                putchar(*format);
-                output++;
-            }
-        }
-        format++; 
-    }
-    va_end(args);
-    return output; /* return the total number characters */
+int print_character(char c)
+{
+_putchar(c);
+return (1);
+}
+
+/**
+ * print_string - Prints a string
+ * @string: String to be printed
+ *
+ * Return: Length of the string i.e.the number of
+ * characters printed excluding the null byte
+ */
+
+int print_string(const char *string)
+{
+int length = 0;
+
+while (*string)
+{
+	_putchar(*string++);
+	length++;
+}
+return (length - 1);
+}
+
+/**
+ * print_percent - Prints a literal % sign
+ *
+ * Return: Always 1 (the number of characters printed)
+ */
+
+int print_percent()
+{
+_putchar('%');
+return (1);
 }
