@@ -22,7 +22,7 @@ while (*format)
 		_putchar(*format);
 		char_count++; 
 	}
-	else if (*format == '%')
+	else
 	{
 		format++;
 		if (* format == '\0')
@@ -42,11 +42,6 @@ while (*format)
 			putchar(*format);
 			char_count++;
 		}
-	}
-	else
-	{
-		putchar(*format);
-		char_count++;
 	}
 	format++;
 }
