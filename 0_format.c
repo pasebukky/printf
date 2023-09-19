@@ -23,14 +23,16 @@ return (1);
 
 int print_string(const char *string)
 {
-int length = 0;
+int length;
+int i;
 
-while (*string)
+length = strlen(string);
+
+for (i = 0; i < length; i++)
 {
-	_putchar(*string++);
-	length++;
+	_putchar(string[i]);
 }
-return (length - 1);
+return (length);
 }
 
 /**
