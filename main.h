@@ -15,7 +15,7 @@ int print_character(char c);
 int print_string(const char *string);
 int print_percent();
 int print_integer(int n);
-
+int print_binary(int n);
 
 
 

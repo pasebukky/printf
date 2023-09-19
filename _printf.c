@@ -35,6 +35,8 @@ while (*format)
 			char_count += print_percent();
 		else if (*format == 'd' || *format == 'i')
 			char_count += print_integer(va_arg(args, int));
+		else if (*format == 'b')
+			char_count += print_binary(va_arg(args, int));
 		else
 		{
 			putchar('%'); 
