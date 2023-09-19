@@ -10,7 +10,7 @@
 int print_binary(int n) 
 {
 int char_count;
-int byte [8];
+int byte [32];
 int a;
 int b;
   
